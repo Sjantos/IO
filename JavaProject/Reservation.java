@@ -5,7 +5,6 @@ public class Reservation {
 	private Client client;
 	private Date emd_date;
 	private int room_number;
-	private boolean busy;
 	
 	public String getReservation_id() {
 		return reservation_id;
@@ -45,14 +44,6 @@ public class Reservation {
 	
 	public void setRoom_number(int room_number) {
 		this.room_number = room_number;
-	}
-
-	public boolean isBusy() {
-		return busy;
-	}
-
-	public void setBusy(boolean busy) {
-		this.busy = busy;
 	}
 
 }
