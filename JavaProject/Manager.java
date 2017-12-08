@@ -1,8 +1,9 @@
-
+import java.util.Date;
+import java.util.List;
 public class Manager extends Employee implements I_Receptionist, I_Manager, I_Repairman, I_Cleaner {
 	
 	private Client client;
-	private Room[] rooms;
+	private List<Room> rooms;
 	public void Make_reservation(String client_id, Date start_date, Date end_date, int room_number){
 		
 	}
@@ -12,7 +13,7 @@ public class Manager extends Employee implements I_Receptionist, I_Manager, I_Re
 	public void Register_client(String last_name, String first_name, String client_id, String email){
 		
 	}
-	public Room[] Find_free_room(Date start_date, Date end_date, int capacity){
+	public List<Room> Find_free_room(Date start_date, Date end_date, int capacity){
 		
 		return rooms;
 	}

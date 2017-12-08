@@ -1,11 +1,15 @@
-
+import java.util.Date;
 public class Reservation {
 	private String reservation_id;
 	private Date start_date;
 	private Client client;
 	private Date emd_date;
 	private int room_number;
+	private boolean busy;
 	
+	public Reservation(String client_id, Date start_date2, Date end_date, int room_number2) {
+	}
+
 	public String getReservation_id() {
 		return reservation_id;
 	}
@@ -44,6 +48,14 @@ public class Reservation {
 	
 	public void setRoom_number(int room_number) {
 		this.room_number = room_number;
+	}
+
+	public boolean isBusy() {
+		return busy;
+	}
+
+	public void setBusy(boolean busy) {
+		this.busy = busy;
 	}
 
 }

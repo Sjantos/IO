@@ -2,7 +2,7 @@
 public class Person {
 	private String last_name;
 	private String first_name;
-	private String id;
+	private static String id;
 	private String email;
 	
 	public String getLast_name() {
@@ -21,7 +21,7 @@ public class Person {
 		this.first_name = first_name;
 	}
 	
-	public String getId() {
+	public static String getId() {
 		return id;
 	}
 	

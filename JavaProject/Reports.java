@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public class Reports {
 	
 	private Report[] all_reports;

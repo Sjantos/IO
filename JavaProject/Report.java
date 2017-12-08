@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public class Report {
 	private Date date;
 	private double cash;

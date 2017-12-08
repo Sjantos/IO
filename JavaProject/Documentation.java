@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public class Documentation {
 	private Payments[] payments;
 	private Reports[] reports;

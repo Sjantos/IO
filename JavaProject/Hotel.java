@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public class Hotel {
 	
 	private Employees employees;

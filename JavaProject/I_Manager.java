@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public interface I_Manager {
 	public void View_reports();
 	public void Print_and_archive_report(Date date);
