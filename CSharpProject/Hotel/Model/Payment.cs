@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hotel.Model
+{
+    class Payment
+    {
+        double paymentValue;
+        bool income;
+
+        public Payment()
+        {
+            this.paymentValue = 0.0;
+            this.income = true;
+        }
+
+        public Payment(double value, bool income)
+        {
+            this.paymentValue = value;
+            this.income = income;
+        }
+
+        //------------------ GETTERS AND SETTERS-----------------
+
+        public double PaymentValue
+        {
+            get { return paymentValue; }
+            set { paymentValue = value; }
+        }
+
+        public bool Income
+        {
+            get { return income; }
+            set { income = value; }
+        }
+    }
+}

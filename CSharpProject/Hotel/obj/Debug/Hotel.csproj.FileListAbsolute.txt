@@ -1,0 +1,9 @@
+B:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.exe.config
+B:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.exe
+B:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.pdb
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.csprojResolveAssemblyReference.cache
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.exe
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.pdb

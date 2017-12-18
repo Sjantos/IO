@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hotel.Model
+{
+    class Employees
+    {
+        List<Employee> allEmployees;
+
+        public Employees()
+        {
+            allEmployees = new List<Employee>();
+        }
+
+        //------------------ GETTERS AND SETTERS-----------------
+
+        public Employee this[int i] { get { return allEmployees[i]; } set { allEmployees[i] = value; } }
+    }
+}
