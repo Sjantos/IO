@@ -23,8 +23,7 @@ namespace Hotel.Model
             this.income = income;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public double PaymentValue
         {
             get { return paymentValue; }
@@ -36,5 +35,6 @@ namespace Hotel.Model
             get { return income; }
             set { income = value; }
         }
+        #endregion
     }
 }

@@ -29,8 +29,7 @@ namespace Hotel.Model
             this.email = email;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public String LastName
         {
             get { return lastName; }
@@ -54,5 +53,6 @@ namespace Hotel.Model
             get { return email; }
             set { email = value; }
         }
+        #endregion
     }
 }

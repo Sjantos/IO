@@ -17,7 +17,7 @@ namespace Hotel.Model
             reportsCollection = new Reports();
         }
 
-        public Reports VeiwReports(DateTime fromDate, DateTime toDate)
+        public Reports ViewReports(DateTime fromDate, DateTime toDate)
         {
             throw new NotImplementedException();
         }

@@ -15,8 +15,12 @@ namespace Hotel.Model
             allEmployees = new List<Employee>();
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
-        public Employee this[int i] { get { return allEmployees[i]; } set { allEmployees[i] = value; } }
+        #region getters and setters
+        public Employee this[int i]
+        {
+            get { return allEmployees[i]; }
+            set { allEmployees[i] = value; }
+        }
+        #endregion
     }
 }

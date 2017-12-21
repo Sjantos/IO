@@ -26,8 +26,7 @@ namespace Hotel.Model
             this.card = card;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public DateTime Date
         {
             get { return date; }
@@ -45,5 +44,6 @@ namespace Hotel.Model
             get { return card; }
             set { card = value; }
         }
+        #endregion
     }
 }

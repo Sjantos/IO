@@ -32,8 +32,7 @@ namespace Hotel.Model
             this.roomNumber = roomNumber;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public String ReservationID
         {
             get { return reservationID; }
@@ -63,5 +62,6 @@ namespace Hotel.Model
             get { return roomNumber; }
             set { roomNumber = value; }
         }
+        #endregion
     }
 }

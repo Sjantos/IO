@@ -30,12 +30,12 @@ namespace Hotel.Model
             throw new NotImplementedException();
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public Report this[int i]
         {
             get { return allReports[i]; }
             set { allReports[i] = value; }
         }
+        #endregion
     }
 }

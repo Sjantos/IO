@@ -20,12 +20,12 @@ namespace Hotel.Model
             this.password = password;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public String Password
         {
             get { return password; }
             set { password = value; }
         }
+        #endregion
     }
 }

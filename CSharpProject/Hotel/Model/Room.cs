@@ -36,8 +36,7 @@ namespace Hotel.Model
             this.status = status;
         }
 
-        //------------------ GETTERS AND SETTERS-----------------
-
+        #region getters and setters
         public int RoomNumber
         {
             get { return roomNumber; }
@@ -61,5 +60,6 @@ namespace Hotel.Model
             get { return status; }
             set { status = value; }
         }
+        #endregion
     }
 }
