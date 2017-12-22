@@ -8,7 +8,8 @@ namespace Hotel.Model
 {
     public enum RoomStatus
     {
-        NoNeeds,
+        Busy,
+        Free,
         NeedCleaning,
         NeedRepairing
     }
