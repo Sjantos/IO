@@ -26,10 +26,10 @@ namespace Hotel.Model
             this.roomNumber = 0;
             this.capacity = 0;
             this.beds = "";
-            this.status = RoomStatus.NoNeeds;
+            this.status = RoomStatus.Free;
         }
 
-        public Room(int roomNumber, int capacity, String beds, RoomStatus status = RoomStatus.NoNeeds)
+        public Room(int roomNumber, int capacity, String beds, RoomStatus status = RoomStatus.Free)
         {
             this.roomNumber = roomNumber;
             this.capacity = capacity;
