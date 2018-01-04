@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hotel
+namespace HotelProject
 {
     static class Program
     {
@@ -16,7 +16,8 @@ namespace Hotel
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Model.Hotel hotelObject = new Model.Hotel();
+            Application.Run(new Form1(hotelObject));
         }
     }
 }

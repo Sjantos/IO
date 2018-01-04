@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Model
+namespace HotelProject.Model
 {
     class Reservations
     {
@@ -35,9 +35,35 @@ namespace Hotel.Model
             throw new NotImplementedException();
         }
 
-        public void FindFreeRoom(DateTime startDate, DateTime endDate, int capacity)
+        public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection)
         {
-            throw new NotImplementedException();
+            if (allReservations.Count == 0)
+                return new int[0];
+            else
+            {
+                int index = 0;
+                Room[] rooms = roomsCollection.ToArray();
+                List<int> availableRooms = new List<int>(roomsCollection.ToRoomNumberArray());
+                while(index < allReservations.Count)
+                {
+                    int roomNumber = allReservations[index].RoomNumber;
+                    int i = 0;
+                    for (i = 0; i < rooms.Length; i++)
+                    {
+                        if (rooms[i].RoomNumber == roomNumber)
+                            break;
+                    }
+                    bool capacityIF = capacity == rooms[i].Capacity;
+                    bool firstDateIF = (startDate < allReservations[index].StartDate) && (endDate <= allReservations[index].StartDate);
+                    bool secondDateIF = (startDate > allReservations[index].EndDate) && (endDate >= allReservations[index].EndDate);
+
+                    if (!(capacityIF && firstDateIF && secondDateIF))
+                        availableRooms.Remove(roomNumber);
+                    index++;
+                }
+
+                return availableRooms.ToArray<int>();
+            }
         }
 
         #region getters and setters

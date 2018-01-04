@@ -1,4 +1,4 @@
-﻿namespace Hotel
+﻿namespace HotelProject
 {
     partial class Form1
     {
@@ -147,6 +147,7 @@
             this.buttonFindFreeRoom.TabIndex = 2;
             this.buttonFindFreeRoom.Text = "Find free room";
             this.buttonFindFreeRoom.UseVisualStyleBackColor = true;
+            this.buttonFindFreeRoom.Click += new System.EventHandler(this.ButtonFindFreeRoom_Click);
             // 
             // buttonCheckInClient
             // 
@@ -213,6 +214,7 @@
             this.buttonReportNeedForCleaning.TabIndex = 8;
             this.buttonReportNeedForCleaning.Text = "Report need for cleaning";
             this.buttonReportNeedForCleaning.UseVisualStyleBackColor = true;
+            this.buttonReportNeedForCleaning.Click += new System.EventHandler(this.ButtonReportNeedForCleaning_Click);
             // 
             // buttonReportNeedForRepair
             // 
@@ -224,6 +226,7 @@
             this.buttonReportNeedForRepair.TabIndex = 9;
             this.buttonReportNeedForRepair.Text = "Report need for repair";
             this.buttonReportNeedForRepair.UseVisualStyleBackColor = true;
+            this.buttonReportNeedForRepair.Click += new System.EventHandler(this.ButtonReportNeedForRepair_Click);
             // 
             // buttonReportNeedForSecurityIntervention
             // 
@@ -257,6 +260,7 @@
             this.buttonReportExecutionOfRepair.TabIndex = 12;
             this.buttonReportExecutionOfRepair.Text = "Report execution of repair";
             this.buttonReportExecutionOfRepair.UseVisualStyleBackColor = true;
+            this.buttonReportExecutionOfRepair.Click += new System.EventHandler(this.ButtonReportExecutionOfRepair_Click);
             // 
             // buttonReportExecutionOfCleaning
             // 
@@ -268,6 +272,7 @@
             this.buttonReportExecutionOfCleaning.TabIndex = 13;
             this.buttonReportExecutionOfCleaning.Text = "Report execution of cleaning";
             this.buttonReportExecutionOfCleaning.UseVisualStyleBackColor = true;
+            this.buttonReportExecutionOfCleaning.Click += new System.EventHandler(this.ButtonReportExecutionOfCleaning_Click);
             // 
             // buttonViewReports
             // 
@@ -370,11 +375,15 @@
             // 
             // flowLayoutPanel
             // 
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.AutoSize = true;
             this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel.Location = new System.Drawing.Point(200, 0);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
             this.flowLayoutPanel.Size = new System.Drawing.Size(584, 561);
             this.flowLayoutPanel.TabIndex = 1;
+            this.flowLayoutPanel.WrapContents = false;
             // 
             // Form1
             // 
@@ -387,6 +396,7 @@
             this.Text = "Hotel++";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

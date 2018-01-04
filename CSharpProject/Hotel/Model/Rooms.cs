@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Model
+namespace HotelProject.Model
 {
     class Rooms
     {
@@ -25,11 +25,70 @@ namespace Hotel.Model
             throw new NotImplementedException();
         }
 
+        public void ReportNeedForCleaning(int roomNumber)
+        {
+            for (int i = 0; i < allRooms.Count; i++)
+                if(allRooms[i].RoomNumber == roomNumber)
+                {
+                    allRooms[i].Status = RoomStatus.NeedCleaning;
+                    break;
+                }
+        }
+
+        public void ReportNeedForRepair(int roomNumber)
+        {
+            for (int i = 0; i < allRooms.Count; i++)
+                if (allRooms[i].RoomNumber == roomNumber)
+                {
+                    allRooms[i].Status = RoomStatus.NeedRepairing;
+                    break;
+                }
+        }
+
+        public void ReportExecutionOfRepair(int roomNumber, bool occupied)
+        {
+            for (int i = 0; i < allRooms.Count; i++)
+                if (allRooms[i].RoomNumber == roomNumber)
+                {
+                    if(occupied)
+                        allRooms[i].Status = RoomStatus.Occupied;
+                    else
+                        allRooms[i].Status = RoomStatus.Empty;
+                    break;
+                }
+        }
+
+        public void ReportExecutionOfCleaning(int roomNumber, bool occupied)
+        {
+            for (int i = 0; i < allRooms.Count; i++)
+                if (allRooms[i].RoomNumber == roomNumber)
+                {
+                    if (occupied)
+                        allRooms[i].Status = RoomStatus.Occupied;
+                    else
+                        allRooms[i].Status = RoomStatus.Empty;
+                    break;
+                }
+        }
+
         #region getter and setters
         public Room this[int i]
         {
             get { return allRooms[i]; }
             set { allRooms[i] = value; }
+        }
+
+        internal Room[] ToArray()
+        {
+            return allRooms.ToArray<Room>();
+        }
+
+        internal int[] ToRoomNumberArray()
+        {
+            int[] numbers = new int[allRooms.Count];
+            for (int i = 0; i < allRooms.Count; i++)
+                numbers[i] = allRooms[i].RoomNumber;
+            return numbers;
         }
         #endregion
     }
