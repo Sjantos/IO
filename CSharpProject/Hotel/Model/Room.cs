@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Model
+namespace HotelProject.Model
 {
     public enum RoomStatus
     {
-        Busy,
-        Free,
+        Occupied,
+        Empty,
         NeedCleaning,
         NeedRepairing
     }
@@ -26,10 +26,10 @@ namespace Hotel.Model
             this.roomNumber = 0;
             this.capacity = 0;
             this.beds = "";
-            this.status = RoomStatus.NoNeeds;
+            this.status = RoomStatus.Empty;
         }
 
-        public Room(int roomNumber, int capacity, String beds, RoomStatus status = RoomStatus.NoNeeds)
+        public Room(int roomNumber, int capacity, String beds, RoomStatus status = RoomStatus.Empty)
         {
             this.roomNumber = roomNumber;
             this.capacity = capacity;

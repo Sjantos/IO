@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hotel.Model
+namespace HotelProject.Model
 {
-    class Hotel
+    public class Hotel
     {
         Employees employees;
         Clients clients;
@@ -33,9 +33,9 @@ namespace Hotel.Model
             throw new NotImplementedException();
         }
 
-        public void FindFreeRoom(DateTime startDate, DateTime endDate, int capacity)
+        public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity)
         {
-            throw new NotImplementedException();
+            return reservations.FindFreeRoom(startDate, endDate, capacity, rooms);
         }
 
         public void CheckInClient(String reservationID)
@@ -65,12 +65,12 @@ namespace Hotel.Model
 
         public void ReportNeedForCleaning(int roomNumber)
         {
-            throw new NotImplementedException();
+            rooms.ReportNeedForCleaning(roomNumber);
         }
 
         public void ReportNeedForRepair(int roomNumber)
         {
-            throw new NotImplementedException();
+            rooms.ReportNeedForRepair(roomNumber);
         }
 
         public void ReportNeedForSecurityIntervention(int roomNumber)
@@ -83,14 +83,14 @@ namespace Hotel.Model
             throw new NotImplementedException();
         }
 
-        public void ReportExecutionOfRepair(int roomNumber)
+        public void ReportExecutionOfRepair(int roomNumber, bool occupied)
         {
-            throw new NotImplementedException();
+            rooms.ReportExecutionOfRepair(roomNumber, occupied);
         }
 
-        public void ReportExecutionOfCleaning(int roomNumber)
+        public void ReportExecutionOfCleaning(int roomNumber, bool occupied)
         {
-            throw new NotImplementedException();
+            rooms.ReportExecutionOfCleaning(roomNumber, occupied);
         }
 
         public void ViewReports()

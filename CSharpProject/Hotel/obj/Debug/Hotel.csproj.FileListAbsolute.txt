@@ -7,3 +7,4 @@ B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.csproj.GenerateResource.Cache
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.csproj.CoreCompileInputs.cache
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.exe
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.pdb
+B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.Form1.resources

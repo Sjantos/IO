@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Hotel.Properties
+namespace HotelProject.Properties
 {
 
 
