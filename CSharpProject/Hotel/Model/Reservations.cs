@@ -17,22 +17,33 @@ namespace HotelProject.Model
 
         public void MakeReservation(String clientID, DateTime startDate, DateTime endDate, int roomNumber)
         {
-            throw new NotImplementedException();
+            if (true) // tu ma być wywołana funkcja FindFreeRoom ale nie wiem jakie parametry
+            {
+                int idr=0;
+                if (allReservations.Count!=0)
+                idr = Int32.Parse(allReservations[allReservations.Count - 1].ReservationID) + 1;
+                Reservation iten = new Reservation(idr.ToString(), startDate, endDate, clientID, roomNumber);
+                allReservations.Add(iten);
+            }
         }
 
         public void CancelReservation(String reservationID)
         {
-            throw new NotImplementedException();
+            //reservationID = allReservations.Find(x => x.ReservationID.Contains(reservationID)).ReservationID; //trochę się rozpędziłem
+            allReservations.RemoveAt(Int32.Parse(reservationID));
         }
 
-        public void CheckInClient(String reservationID)
+        public void CheckInClient(String reservationID) //dostęp do allRooms
         {
-            throw new NotImplementedException();
+            int roomnum = allReservations.Find(x => x.ReservationID.Contains(reservationID)).RoomNumber;
+            if(Rooms.allRooms[roomnum].Status == RoomStatus.Empty)
+            Rooms.allRooms[roomnum].Status = RoomStatus.Occupied;
         }
 
-        public void CheckOutClient(String reservationID)
+        public void CheckOutClient(String reservationID) //czy zamienic CheckOutClient na statyczną?
         {
-            throw new NotImplementedException();
+            int roomnum = allReservations.Find(x => x.ReservationID.Contains(reservationID)).RoomNumber;
+            Rooms.CheckOutClient(roomnum); 
         }
 
         public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection)

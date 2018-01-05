@@ -13,8 +13,15 @@ namespace HotelProject.Model
         public Rooms()
         {
             allRooms = new List<Room>();
+            init();
         }
 
+        private void init()
+        {
+            Room przed = new Room(1, 4, "2x2", RoomStatus.Empty);
+            allRooms.Add(przed);
+
+        }
         public Rooms FindFreeRoom(DateTime startDate, DateTime endDate, int capacity)
         {
             throw new NotImplementedException();
@@ -22,7 +29,7 @@ namespace HotelProject.Model
 
         public void CheckOutClient(int roomNumber)
         {
-            throw new NotImplementedException();
+            ReportNeedForCleaning(roomNumber);
         }
 
         public void ReportNeedForCleaning(int roomNumber)
@@ -54,6 +61,7 @@ namespace HotelProject.Model
                         allRooms[i].Status = RoomStatus.Occupied;
                     else
                         allRooms[i].Status = RoomStatus.Empty;
+                    ReportNeedForCleaning(roomNumber);
                     break;
                 }
         }
