@@ -52,16 +52,16 @@ namespace HotelProject.Model
             allReservations.RemoveAt(Int32.Parse(reservationID));
         }
 
-        public RoomStatus CheckInClient(String reservationID) //dostęp do allRooms
+        public RoomStatus CheckInClient(String reservationID, Rooms roomsCollection) //dostęp do allRooms
         {
             int i = 0;
             for (i = 0; i < allReservations.Count; i++)
                 if (allReservations[i].ReservationID.Equals(reservationID))
                 {
-                    Rooms.allRooms[allReservations[i].RoomNumber].Status = RoomStatus.Occupied;
+                    roomsCollection[allReservations[i].RoomNumber].Status = RoomStatus.Occupied;
                     break;
                 }
-            return Rooms.allRooms[allReservations[i].RoomNumber].Status;
+            return roomsCollection[allReservations[i].RoomNumber].Status;
         }
 
         public void CheckOutClient(String reservationID) //czy zamienic CheckOutClient na statyczną?

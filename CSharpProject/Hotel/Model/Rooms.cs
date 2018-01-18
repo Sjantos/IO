@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HotelProject.Model
 {
-    class Rooms
+    public class Rooms
     {
-        static public List<Room> allRooms;
+        List<Room> allRooms;
 
         public Rooms()
         {
@@ -98,7 +98,7 @@ namespace HotelProject.Model
         }
 
         #region getter and setters
-        public Room this[int i]
+        internal Room this[int i]
         {
             get { return allRooms[i]; }
             set { allRooms[i] = value; }

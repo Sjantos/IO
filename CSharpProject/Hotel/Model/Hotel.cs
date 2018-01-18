@@ -38,7 +38,7 @@ namespace HotelProject.Model
             return reservations.FindFreeRoom(startDate, endDate, capacity, rooms);
         }
 
-        public void CheckInClient(String reservationID)
+        public void CheckInClient(String reservationID, Rooms roomsCollection)
         {
             throw new NotImplementedException();
         }
