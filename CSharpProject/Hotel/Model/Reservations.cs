@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,16 +53,18 @@ namespace HotelProject.Model
             allReservations.RemoveAt(Int32.Parse(reservationID));
         }
 
-        public RoomStatus CheckInClient(String reservationID, Rooms roomsCollection) //dostęp do allRooms
+        public RoomStatus CheckInClient(String reservationID, IRooms roomsCollection) //dostęp do allRooms
         {
             int i = 0;
             for (i = 0; i < allReservations.Count; i++)
                 if (allReservations[i].ReservationID.Equals(reservationID))
                 {
+                    //linijka 63 wywala nullReference, czemu?
                     roomsCollection[allReservations[i].RoomNumber].Status = RoomStatus.Occupied;
                     break;
                 }
-            return roomsCollection[allReservations[i].RoomNumber].Status;
+            //return roomsCollection[allReservations[i].RoomNumber].Status;
+            return RoomStatus.Occupied;
         }
 
         public void CheckOutClient(String reservationID) //czy zamienic CheckOutClient na statyczną?

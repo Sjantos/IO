@@ -14,7 +14,7 @@ namespace HotelProject.Model
         NeedRepairing
     }
 
-    class Room
+    public class Room
     {
         int roomNumber;
         int capacity;

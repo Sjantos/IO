@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.Model
 {
-    public class Rooms
+    public class Rooms : IRooms
     {
         List<Room> allRooms;
 
@@ -98,24 +99,26 @@ namespace HotelProject.Model
         }
 
         #region getter and setters
-        internal Room this[int i]
+        public Room this[int i]
         {
             get { return allRooms[i]; }
             set { allRooms[i] = value; }
         }
 
-        internal Room[] ToArray()
+        public Room[] ToArray()
         {
             return allRooms.ToArray<Room>();
         }
 
-        internal int[] ToRoomNumberArray()
+        public int[] ToRoomNumberArray()
         {
             int[] numbers = new int[allRooms.Count];
             for (int i = 0; i < allRooms.Count; i++)
                 numbers[i] = allRooms[i].RoomNumber;
             return numbers;
         }
+
+        public IEnumerable<Room> AllRooms { get { return allRooms; } }
 
         #endregion
     }

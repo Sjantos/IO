@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hotel.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,7 +39,7 @@ namespace HotelProject.Model
             return reservations.FindFreeRoom(startDate, endDate, capacity, rooms);
         }
 
-        public void CheckInClient(String reservationID, Rooms roomsCollection)
+        public void CheckInClient(String reservationID, IRooms roomsCollection)
         {
             throw new NotImplementedException();
         }

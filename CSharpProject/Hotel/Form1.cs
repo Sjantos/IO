@@ -7,9 +7,9 @@ namespace HotelProject
 {
     public partial class Form1 : Form
     {
-        Hotel hotelObject;
+        HotelProject.Model.Hotel hotelObject;
 
-        public Form1(Hotel h)
+        public Form1(HotelProject.Model.Hotel h)
         {
             InitializeComponent();
             hotelObject = h;
