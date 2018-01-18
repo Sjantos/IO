@@ -13,26 +13,62 @@ namespace HotelProject.Model
         public Reservations()
         {
             allReservations = new List<Reservation>();
+            init();
         }
+        private void init()
+        { 
+            DateTime data = new DateTime(2017, 01 , 12);
+            DateTime datak = new DateTime(2017, 01, 14);
+            Reservation przed = new Reservation("0", data , datak, "3",2);
+            allReservations.Add(przed);
 
+            data = new DateTime(2017, 01, 12);
+            datak = new DateTime(2017, 01, 14);
+            przed = new Reservation("1", data, datak, "2", 4);
+            allReservations.Add(przed);
+
+            data = new DateTime(2017, 01, 15);
+            datak = new DateTime(2017, 01, 17);
+            przed = new Reservation("2", data, datak, "1", 2);
+            allReservations.Add(przed);
+
+
+        }
         public void MakeReservation(String clientID, DateTime startDate, DateTime endDate, int roomNumber)
         {
-            throw new NotImplementedException();
+            if (true) // tu ma być wywołana funkcja FindFreeRoom ale nie wiem jakie parametry
+            {
+                int idr=0;
+                if (allReservations.Count!=0)
+                idr = Int32.Parse(allReservations[allReservations.Count - 1].ReservationID) + 1;
+                Reservation iten = new Reservation(idr.ToString(), startDate, endDate, clientID, roomNumber);
+                allReservations.Add(iten);
+            }
         }
 
         public void CancelReservation(String reservationID)
         {
-            throw new NotImplementedException();
+            //reservationID = allReservations.Find(x => x.ReservationID.Contains(reservationID)).ReservationID; //trochę się rozpędziłem
+            allReservations.RemoveAt(Int32.Parse(reservationID));
         }
 
-        public void CheckInClient(String reservationID)
+        public RoomStatus CheckInClient(String reservationID) //dostęp do allRooms
         {
-            throw new NotImplementedException();
+            int i = 0;
+            for (i = 0; i < allReservations.Count; i++)
+                if (allReservations[i].ReservationID.Equals(reservationID))
+                {
+                    Rooms.allRooms[allReservations[i].RoomNumber].Status = RoomStatus.Occupied;
+                    break;
+                }
+            return Rooms.allRooms[allReservations[i].RoomNumber].Status;
         }
 
-        public void CheckOutClient(String reservationID)
+        public void CheckOutClient(String reservationID) //czy zamienic CheckOutClient na statyczną?
         {
-            throw new NotImplementedException();
+            var r = new Rooms();
+            int roomnum = allReservations.Find(x => x.ReservationID.Contains(reservationID)).RoomNumber;
+            r.CheckOutClient(roomnum); 
         }
 
         public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection)
