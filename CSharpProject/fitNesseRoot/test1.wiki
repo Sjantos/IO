@@ -1,0 +1,10 @@
+---
+Test
+---
+!contents -R2 -g -p -f -h
+!path B:\GitHub\IO\CSharpProject\Acceptance.Tests\bin\Debug\Acceptance.Tests.dll
+!define COMMAND_PATTERN {%m -r fitnesse.fitserver.FitServer %p}
+!define TEST_RUNNER {B:\GitHub\IO\CSharpProject\packages\FitSharp.2.6.0\lib\net452\Runner.exe}
+!|FitTests.FindFreeRoomTestDo|
+|DstartD|DstartM|DstartR|DendD|DendM|DendR|cap|MyTest?|
+|1|1|2018|2|1|2018|4|4 |

@@ -1,0 +1,8 @@
+---
+Test
+---
+!contents -R2 -g -p -f -h
+!define TEST_RUNNER {B:\GitHub\IO\CSharpProject\packages\FitSharp.2.6.0\lib\net452\Runner.exe}
+!define COMMAND_PATTERN {%m -c B:\GitHub\IO\CSharpProject\FitTests\storytest.config.xml %p}
+|sample do|
+|check|greeting|hi|

@@ -13,9 +13,9 @@ namespace Hotel.Interfaces
 
         void CancelReservation(String reservationID);
 
-        RoomStatus CheckInClient(String reservationID, IRooms roomsCollection); //dostęp do allRooms
+        RoomStatus CheckInClient(String reservationID, IRooms roomsCollection);
 
-        void CheckOutClient(String reservationID); //czy zamienic CheckOutClient na statyczną?
+        void CheckOutClient(int roomNumber, IRooms roomsCollection);
 
         int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection);
 

@@ -40,6 +40,12 @@
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="fit, Version=2.6.6551.29322, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FitSharp.2.6.0\lib\net452\fit.dll</HintPath>
+    </Reference>
+    <Reference Include="fitSharp, Version=2.6.6551.29321, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FitSharp.2.6.0\lib\net452\fitSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Pex.Framework, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>

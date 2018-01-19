@@ -1,4 +1,3 @@
-B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.csprojResolveAssemblyReference.cache
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.Form1.resources
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.Properties.Resources.resources
 B:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.csproj.GenerateResource.Cache

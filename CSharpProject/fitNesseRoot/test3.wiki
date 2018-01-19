@@ -1,0 +1,9 @@
+---
+Test
+---
+!contents -R2 -g -p -f -h
+!define TEST_RUNNER {B:\GitHub\IO\CSharpProject\packages\FitSharp.2.6.0\lib\net452\Runner.exe}
+!define COMMAND_PATTERN {%m -c B:\GitHub\IO\CSharpProject\FitTests\storytest.config.xml %p}
+!|FitTests.FindFreeRoomTest|
+|DstartD|DstartM|DstartR|DendD|DendM|DendR|cap|MyTest?|
+|1|1|2018|2|1|2018|4|0,|

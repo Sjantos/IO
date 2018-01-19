@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.Model
 {
-    class Reservations
+    public class Reservations:IReservations
     {
         List<Reservation> allReservations;
 
@@ -16,7 +16,7 @@ namespace HotelProject.Model
             allReservations = new List<Reservation>();
             init();
         }
-        private void init()
+        public void init()
         { 
             DateTime data = new DateTime(2017, 01 , 12);
             DateTime datak = new DateTime(2017, 01, 14);
@@ -53,25 +53,21 @@ namespace HotelProject.Model
             allReservations.RemoveAt(Int32.Parse(reservationID));
         }
 
-        public RoomStatus CheckInClient(String reservationID, IRooms roomsCollection) //dostęp do allRooms
+        public RoomStatus CheckInClient(String reservationID, IRooms roomsCollection)
         {
             int i = 0;
             for (i = 0; i < allReservations.Count; i++)
                 if (allReservations[i].ReservationID.Equals(reservationID))
                 {
-                    //linijka 63 wywala nullReference, czemu?
                     roomsCollection[allReservations[i].RoomNumber].Status = RoomStatus.Occupied;
                     break;
                 }
-            //return roomsCollection[allReservations[i].RoomNumber].Status;
-            return RoomStatus.Occupied;
+            return roomsCollection[allReservations[i].RoomNumber].Status;
         }
 
-        public void CheckOutClient(String reservationID) //czy zamienic CheckOutClient na statyczną?
+        public void CheckOutClient(int roomNumber, IRooms roomsCollection)
         {
-            var r = new Rooms();
-            int roomnum = allReservations.Find(x => x.ReservationID.Contains(reservationID)).RoomNumber;
-            r.CheckOutClient(roomnum); 
+            roomsCollection.CheckOutClient(roomNumber);
         }
 
         public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection)
@@ -83,7 +79,8 @@ namespace HotelProject.Model
                 int index = 0;
                 Room[] rooms = roomsCollection.ToArray();
                 List<int> availableRooms = new List<int>(roomsCollection.ToRoomNumberArray());
-                while(index < allReservations.Count)
+                //int[] availableRooms = roomsCollection.ToRoomNumberArray();
+                while (index < allReservations.Count)
                 {
                     int roomNumber = allReservations[index].RoomNumber;
                     int i = 0;
@@ -94,11 +91,25 @@ namespace HotelProject.Model
                     }
                     bool capacityIF = capacity == rooms[i].Capacity;
                     bool firstDateIF = (startDate < allReservations[index].StartDate) && (endDate <= allReservations[index].StartDate);
-                    bool secondDateIF = (startDate > allReservations[index].EndDate) && (endDate >= allReservations[index].EndDate);
+                    bool secondDateIF = (startDate >= allReservations[index].EndDate) && (endDate > allReservations[index].EndDate);
 
-                    if (!(capacityIF && firstDateIF && secondDateIF))
+                    if (!(capacityIF && (firstDateIF || secondDateIF)))
                         availableRooms.Remove(roomNumber);
                     index++;
+                }
+
+                
+                for (int j = 0; j < rooms.Length; j++)
+                {
+                    for (int i = 0; i < availableRooms.Count; i++)
+                    {
+                        if(availableRooms[i] == rooms[j].RoomNumber)
+                        {
+                            if (rooms[j].Capacity != capacity)
+                                availableRooms.Remove(availableRooms[i]);
+                            break;
+                        }
+                    }
                 }
 
                 return availableRooms.ToArray<int>();
@@ -111,7 +122,9 @@ namespace HotelProject.Model
             get { return allReservations[i]; }
             set { allReservations[i] = value; }
         }
-        private IEnumerable<Reservation> AllReservations { get; }
+        //IEnumerable<Reservation> AllReservations { get; }
+
+        IEnumerable<Reservation> IReservations.AllReservations => throw new NotImplementedException();
         #endregion
     }
 }

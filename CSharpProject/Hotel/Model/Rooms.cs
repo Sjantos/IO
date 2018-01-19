@@ -14,10 +14,10 @@ namespace HotelProject.Model
         public Rooms()
         {
             allRooms = new List<Room>();
-            init();
+            //init();
         }
 
-        private void init()
+        public void init()
         {
             Room przed = new Room(0, 4, "2x2", RoomStatus.Empty);
             allRooms.Add(przed);
