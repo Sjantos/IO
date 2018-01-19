@@ -17,3 +17,13 @@ C:\Users\Michał\Downloads\IO-Coding\IO-Coding\CSharpProject\Hotel\obj\Debug\Hot
 C:\Users\Michał\Downloads\IO-Coding\IO-Coding\CSharpProject\Hotel\obj\Debug\HotelProject.csproj.GenerateResource.Cache
 C:\Users\Michał\Downloads\IO-Coding\IO-Coding\CSharpProject\Hotel\obj\Debug\Hotel.exe
 C:\Users\Michał\Downloads\IO-Coding\IO-Coding\CSharpProject\Hotel\obj\Debug\Hotel.pdb
+D:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.exe.config
+D:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.exe
+D:\GitHub\IO\CSharpProject\Hotel\bin\Debug\Hotel.pdb
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.csprojResolveAssemblyReference.cache
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.Form1.resources
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.Properties.Resources.resources
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.csproj.GenerateResource.Cache
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\HotelProject.csproj.CoreCompileInputs.cache
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.exe
+D:\GitHub\IO\CSharpProject\Hotel\obj\Debug\Hotel.pdb

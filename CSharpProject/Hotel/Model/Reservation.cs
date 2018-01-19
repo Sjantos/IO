@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.Model
 {
-    class Reservation
+    public class Reservation
     {
         String reservationID;
         DateTime startDate;

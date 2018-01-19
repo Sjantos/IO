@@ -111,6 +111,7 @@ namespace HotelProject.Model
             get { return allReservations[i]; }
             set { allReservations[i] = value; }
         }
+        private IEnumerable<Reservation> AllReservations { get; }
         #endregion
     }
 }
