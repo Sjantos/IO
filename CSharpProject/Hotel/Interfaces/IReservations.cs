@@ -17,7 +17,7 @@ namespace Hotel.Interfaces
 
         void CheckOutClient(int roomNumber, IRooms roomsCollection);
 
-        int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection);
+        int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, IRooms roomsCollection);
 
         #region getters and setters
         Reservation this[int i]{ get; set; }

@@ -70,7 +70,7 @@ namespace HotelProject.Model
             roomsCollection.CheckOutClient(roomNumber);
         }
 
-        public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, Rooms roomsCollection)
+        public int[] FindFreeRoom(DateTime startDate, DateTime endDate, int capacity, IRooms roomsCollection)
         {
             if (allReservations.Count == 0)
                 return new int[0];
